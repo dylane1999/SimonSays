@@ -1,0 +1,17 @@
+.massive.button {
+  height: 200px;
+  margin-bottom: 28px;
+}
+
+.massive.divider {
+  margin-top: 50px;
+}
+
+#mode-selector {
+  min-width: 400px;
+  margin-right: 11px;
+}
+
+.debug {
+  border: 1px solid red;
+}

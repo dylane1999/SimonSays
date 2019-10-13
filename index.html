@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Simon Says</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" integrity="sha256-QVBN0oT74UhpCtEo4Ko+k3sNo+ykJFBBtGduw13V9vw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <div class="ui hidden divider"></div>
+  <div  class="ui container">
+    <div class="ui centered grid">
+      <div id="top-row" class="three column row">
+        <div class="computer only left aligned column">
+          <em>You don't learn to walk by following rules. <br>You learn by doing, and by falling over.<br>-- Richard Branson</em>
+        </div>
+        <div class="computer tablet mobile only center aligned column">
+          <h1 class="large header">Let's Play Simon! <div id="wait-wat" class="ui small labeled basic button">wait, wat?</div></h1>
+        </div>
+        <div class="computer only right aligned column">
+          <em>I hear and I forget. I see and I remember. <br>I do and I understand<br>-- Confucius</em>
+        </div>
+      </div>
+
+      <div class="four column row">
+        <div class="side column">
+          <div id="announcements"></div>
+          <canvas id="simon-canvas"></canvas>
+          <div class="row">
+            <div class="ui grey card hidden message">
+              <div class="image">
+                <img src="https://fakeimg.pl/300x285/?text=Player 1">
+              </div>
+              <div class="content">
+                <a class="header">Player Name</a>
+                <div class="meta">
+                  <em>pithy player tag line</em>
+                </div>
+                <div class="description">
+                  player is <strong>[ winning / losing ]</strong>
+                </div>
+              </div>
+              <div class="extra content">
+                <i class="left floated red user icon"></i>
+                <span class="left floated">0 losses</span>
+                <span class="right floated">0 wins</span>
+                <i class="right floated green user icon"></i>
+              </div>
+              <div class="ui bottom attached basic button">
+                <i class="add icon"></i>
+                join the game
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="row">
+            <div class="ui massive fluid green button"></div>
+          </div>
+          <div class="row">
+            <div class="ui massive fluid blue button"></div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="row">
+            <div class="ui massive fluid red button"></div>
+          </div>
+          <div class="row">
+            <div class="ui massive fluid yellow button"></div>
+          </div>
+        </div>
+        <div class="side column">
+          <div class="row">
+            <div id="debug"></div>
+            <div class="ui grey card hidden message">
+              <div class="image">
+                <img src="https://fakeimg.pl/300x285/?text=Player 2">
+              </div>
+              <div class="content">
+                <div class="header">Player Name</div>
+                <div class="meta">
+                  <em>pithy player tag line</em>
+                </div>
+                <div class="description">
+                  player is <strong>[ winning / losing ]</strong>
+                </div>
+              </div>
+              <div class="extra content">
+                <i class="left floated red user icon"></i>
+                <span class="left floated">0 losses</span>
+                <span class="right floated">0 wins</span>
+                <i class="right floated green user icon"></i>
+              </div>
+              <div class="ui bottom attached basic button">
+                <i class="add icon"></i>
+                join the game
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="one column row">
+        <div class="center aligned column">
+          <div id="mode-selector" class="ui buttons">
+            <button id="single-player" class="ui button">Single Player Mode</button>
+            <div class="or"></div>
+            <button id="two-player" class="ui button">Two Player Mode</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal intro video (doesn't seem to matter where it is in the DOM) -->
+  <div id="intro-modal" class="ui basic modal">
+    <div class="ui icon header">
+      <i class="game icon"></i>
+      What is Simon?
+    </div>
+    <span>(ESC to close)</span>
+    <div class="content">
+      <div id="intro-video" class="ui embed" data-source="youtube" data-id="1Yqj76Q4jJ4" data-placeholder="/img/simon-cover.png"></div>
+    </div>
+  </div>
+
+  <!-- intro dimmer (doesn't seem to matter where it is in the DOM) -->
+  <div class="ui dimmer">
+    <div class="ui massive text loader">loading</div>
+  </div>
+  <!-- sounds to play with buttons -->
+  <audio id="sound-1" src="mp3/checkout.mp3" preload="auto"></audio>
+  <audio id="sound-2" src="mp3/honk.mp3" preload="auto"></audio>
+  <audio id="sound-3" src="mp3/ping.mp3" preload="auto"></audio>
+  <audio id="sound-4" src="mp3/squeek.mp3" preload="auto"></audio>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js" integrity="sha256-qs5p0BFSqSvrstBxPvex+zdyrzcyGdHNeNmAirO2zc0=" crossorigin="anonymous"></script>
+
+  <script src="js/ext/confetti.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/buttons.js"></script>
+  <script src="js/flashing.js"></script>
+  <script src="js/game.v1.js"></script>
+
+</body>
+</html>
+

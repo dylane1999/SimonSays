@@ -1,0 +1,14 @@
+{
+  "name": "simon-says",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Adjacent Academies",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
